@@ -80,7 +80,8 @@ class ModelManager {
         final models = output['models'];
         if (models != null) {
           for (final m in models) {
-            ollamaModels.add(Model(id: m['model'], name: m['name']));
+            ollamaModels.add(Model(
+                id: m['model'] ?? m['name'], name: m['name'] ?? m['model']));
           }
         }
       }
