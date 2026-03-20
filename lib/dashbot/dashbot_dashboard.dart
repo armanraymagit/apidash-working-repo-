@@ -98,47 +98,47 @@ class DashbotWindow extends ConsumerWidget {
                               children: [
                                 Expanded(
                                   child: Row(
-                                  children: [
-                                    kHSpacer20,
-                                    DashbotIcons.getDashbotIcon1(width: 38),
-                                    kHSpacer12,
-                                    Text(
-                                      'DashBot',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .surface,
+                                    children: [
+                                      kHSpacer20,
+                                      DashbotIcons.getDashbotIcon1(width: 38),
+                                      kHSpacer12,
+                                      Text(
+                                        'DashBot',
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .surface,
+                                        ),
                                       ),
-                                    ),
-                                    kHSpacer4,
+                                      kHSpacer4,
                                       Flexible(
                                         child: AIModelSelectorButton(
-                                      aiRequestModel: AIRequestModel.fromJson(
-                                          settings.defaultAIModel ?? {}),
-                                      useRootNavigator: true,
-                                      onDialogOpen: () => ref
-                                          .read(dashbotWindowNotifierProvider
-                                              .notifier)
-                                          .hide(),
-                                      onDialogClose: () => ref
-                                          .read(dashbotWindowNotifierProvider
-                                              .notifier)
-                                          .show(),
-                                      onModelUpdated: (d) {
-                                        ref
-                                            .read(settingsProvider.notifier)
-                                            .update(
-                                                defaultAIModel: d.copyWith(
-                                                    modelConfigs: [],
-                                                    stream: null,
-                                                    systemPrompt: '',
-                                                    userPrompt: '').toJson());
-                                      },
+                                          aiRequestModel: AIRequestModel.fromJson(
+                                              settings.defaultAIModel ?? {}),
+                                          useRootNavigator: true,
+                                          onDialogOpen: () => ref
+                                              .read(dashbotWindowNotifierProvider
+                                                  .notifier)
+                                              .hide(),
+                                          onDialogClose: () => ref
+                                              .read(dashbotWindowNotifierProvider
+                                                  .notifier)
+                                              .show(),
+                                          onModelUpdated: (d) {
+                                            ref
+                                                .read(settingsProvider.notifier)
+                                                .update(
+                                                    defaultAIModel: d.copyWith(
+                                                        modelConfigs: [],
+                                                        stream: null,
+                                                        systemPrompt: '',
+                                                        userPrompt: '').toJson());
+                                          },
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
                                   ),
                                 ),
                                 IconButton(

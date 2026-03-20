@@ -48,8 +48,8 @@ class AIModelSelectorButton extends StatelessWidget {
             },
       child: Text(
         aiRequestModel?.model ?? kLabelSelectModel,
-        overflow: TextOverflow.ellipsis,
         maxLines: 1,
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }
